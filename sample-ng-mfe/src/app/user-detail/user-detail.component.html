@@ -1,0 +1,22 @@
+<div class="container">
+  <ng-container *ngIf="(user$ | async) as user">
+    <div class="row">
+      <div class="col">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-12">
+              <div class="card-body">
+                <h5 class="card-title">{{user?.name}}</h5>
+                <p class="card-text">UserID: {{user?.id}}</p>
+                <p class="card-text">Age: {{user?.age}}</p>
+                <p class="card-text">Department: {{user?.dept}}</p>
+                <p class="card-text"><small class="text-muted">Role: {{user?.role}}</small></p>
+                <a routerLink="/user/list" class="btn btn-primary">Go back</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

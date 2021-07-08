@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ng-container *ngIf="(userObs$ | async) as users">
+        <table class="table table-hover caption-top">
+          <caption>List of users</caption>
+          <thead>
+            <tr >
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Dept</th>
+              <th scope="col">Age</th>
+              <th scope="col">Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <th scope="row"> <a [routerLink]="['/user/detail', user.id]">{{user.id}}</a> </th>
+              <td>{{user.name}}</td>
+              <td>{{user.dept}}</td>
+              <td>{{user.age}}</td>
+              <td>{{user.role}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+    </div>
+  </div>
+</div>
